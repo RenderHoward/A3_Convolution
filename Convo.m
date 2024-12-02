@@ -27,4 +27,12 @@ figure
 mesh(X,Y,z1);
 title('convolve raw 1')
 
-conv = conv2( z0, z1)
+conv = conv2(z0, z1);
+
+x1 = linspace( -8.16 - (187/2)*0.04, 8.16 + (187/2) * 0.04, 595 );
+y1 = linspace(-9/6000, 1/300+9/6000, 19);
+
+[XX, YY] = meshgrid( x1, y1);
+figure
+mesh(XX, YY, conv)
+title('convolution 01')
